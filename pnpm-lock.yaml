@@ -4,18 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  next@14.2.3:
-    hash: qybzp46nzsrcgfbpdx4hlh66oa
-    path: patches/next_consider_headers_static.patch
-
 importers:
 
   .:
     dependencies:
       next:
         specifier: 14.2.3
-        version: 14.2.3(patch_hash=qybzp46nzsrcgfbpdx4hlh66oa)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -289,7 +284,7 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  next@14.2.3(patch_hash=qybzp46nzsrcgfbpdx4hlh66oa)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  next@14.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@next/env': 14.2.3
       '@swc/helpers': 0.5.5

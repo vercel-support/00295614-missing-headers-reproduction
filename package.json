@@ -15,10 +15,5 @@
 		"@types/react": "18.2.0",
 		"@types/react-dom": "18.2.0",
 		"typescript": "5.3.3"
-	},
-	"pnpm": {
-		"patchedDependencies": {
-			"next@14.2.3": "patches/next_consider_headers_static.patch"
-		}
 	}
 }
