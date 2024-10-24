@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(req: NextRequest) {
-	const random = Math.random();
 	const requestHeaders = new Headers(req.headers);
-	requestHeaders.set("X-Custom-Header", "MyCustomHeaderValue" + random);
+	requestHeaders.set("X-Custom-Request-Path", req.nextUrl.pathname);
 
 	const response = NextResponse.next({
 		request: {

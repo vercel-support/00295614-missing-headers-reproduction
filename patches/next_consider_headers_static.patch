@@ -1,0 +1,28 @@
+diff --git a/dist/client/components/headers.js b/dist/client/components/headers.js
+index 4a625d096b0d0939e208e32f680a9a3617214000..eaf7191deb1f051ba07871df1fd03aaefeb10f69 100644
+--- a/dist/client/components/headers.js
++++ b/dist/client/components/headers.js
+@@ -38,7 +38,8 @@ function headers() {
+     if (staticGenerationStore) {
+         if (staticGenerationStore.forceStatic) {
+             // When we are forcing static we don't mark this as a Dynamic read and we return an empty headers object
+-            return _headers.HeadersAdapter.seal(new Headers({}));
++            // KS: commented out because we want to return a real headers object (see https://github.com/KrasserStoff/shop3/issues/319)
++            // return _headers.HeadersAdapter.seal(new Headers({}));
+         } else {
+             // We will return a real headers object below so we mark this call as reading from a dynamic data source
+             (0, _dynamicrendering.trackDynamicDataAccessed)(staticGenerationStore, callingExpression);
+diff --git a/dist/esm/client/components/headers.js b/dist/esm/client/components/headers.js
+index b98c5cd49c53342be2e5154a32860c2fe6fe50c7..fd95aabf72dee17a165473d820449b2938828499 100644
+--- a/dist/esm/client/components/headers.js
++++ b/dist/esm/client/components/headers.js
+@@ -20,7 +20,8 @@ import { getExpectedRequestStore } from "./request-async-storage.external";
+     if (staticGenerationStore) {
+         if (staticGenerationStore.forceStatic) {
+             // When we are forcing static we don't mark this as a Dynamic read and we return an empty headers object
+-            return HeadersAdapter.seal(new Headers({}));
++            // KS: commented out because we want to return a real headers object (see https://github.com/KrasserStoff/shop3/issues/319)
++            // return HeadersAdapter.seal(new Headers({}));
+         } else {
+             // We will return a real headers object below so we mark this call as reading from a dynamic data source
+             trackDynamicDataAccessed(staticGenerationStore, callingExpression);
